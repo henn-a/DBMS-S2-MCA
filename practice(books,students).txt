@@ -1,0 +1,67 @@
+-- 
+-- Roll No:19
+-- Name: Henna Fathima
+-- Program: PRACTICE
+-- 
+
+
+--
+-- Table structure for table books:
+create table books(bookid int primary key,title varchar(100) NOT NULL,author varchar(50) NOT NULL,price decimal(6,2) default 0.00);
+Query OK, 0 rows affected (0.02 sec)
+
+-- Table structure for table students:
+create table students(studentid int NOT NULL,name varchar(100) NOT NULL,course varchar(50) default 'MCA',age int,check(age>20 and age<40));
+Query OK, 0 rows affected (0.02 sec)
+
+-- ---------create/alter statement commands----------- # This line may be removed in the actual file
+alter table books add publication_date date;
+Query OK, 0 rows affected (0.02 sec)
+
+alter table books modify column price int default 100.00;
+Query OK, 0 rows affected (0.04 sec)
+
+--
+-- Dumping data for table books:
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+insert into books values(1,'Database Systems','Ramez Elmasri',500.00,'1976-10-10'),(2,'Operating System Concepts','Silberschatz',650.00,'1960-11-20'),(3,'Computer Networks','Andrew S.Tanenbaum',700.00,'2000-02-17'),(4,'Algorithms','Cormen',default,'2011-01-23');
+Query OK, 4 rows affected (0.01 sec)
+
+-- Dumping data for table students:
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+insert into students values(101,'Midhun K','MCA',22),(102,'Ann Mariya','MCA',30),(103,'Sidharth M','MCA',21);
+Query OK, 3 rows affected (0.01 sec)
+
+
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
+
+--- # 6 -- 
+update books set price = 700.00 where title = 'Operating System Concepts';
+Query OK, 1 row affected (0.00 sec)
+
+--- # 7 --
+delete from books where bookid = 3;
+Query OK, 1 row affected (0.01 sec)
+
+--- #8 --
+update books set price = price * 1.10;
+Query OK, 3 rows affected (0.01 sec)
+
+--- # 9 --
+alter table books drop column publication_date;
+Query OK, 0 rows affected (0.01 sec)
+
+--- # 10 --
+drop table students;
+Query OK, 0 rows affected (0.02 sec)
+
+
+
